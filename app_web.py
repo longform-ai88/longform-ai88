@@ -509,7 +509,8 @@ tool = st.sidebar.selectbox(
     "Pitch Deck Generator",
     "Business Report",
     "Long Text Editor"
-    ]
+    ],
+    key="tool_selector"
 )
 def translate_text(text, language):
     prompt = f"""
