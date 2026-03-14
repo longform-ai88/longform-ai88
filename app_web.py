@@ -621,7 +621,7 @@ if tool == "Book Generator":
         key="language_selector"
     )
 
-    chapters = st.slider("Number of chapters", 1, 10, 3)
+    chapters = st.slider("Number of chapters", 1, 10, 3, key="book_chapters")
     topic = st.text_input("Book topic", key="topic_input")
     author = st.text_input("Author", key="author_input")
     if topic and author:
