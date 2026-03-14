@@ -13,7 +13,7 @@ from PIL import Image, ImageDraw
 from io import BytesIO
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.utils import ImageReader
-client = OpenAI()
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 @st.cache_data
 def generate_ai_text(prompt):
     response = client.responses.create(
