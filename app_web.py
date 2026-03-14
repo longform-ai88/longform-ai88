@@ -593,13 +593,14 @@ def generate_cover(topic, author):
         return None
 if tool == "Book Generator":
     st.header("Book Generator")
-    topic = st.text_input("Book topic")
+    topic = st.text_input("Book topic", key="book_topic")
     user_text = st.text_area(
         "Optional: Paste notes or text for the book",
         height=250
+        key="book_notes"
     )
-    author = st.text_input("Author")
-    language = st.selectbox(
+    author = st.text_input("Author", key="book_author")
+    language = st.selectbox(..., key="language_select")
         "Translate book to:",
         [   "None",
             "English",
