@@ -501,17 +501,6 @@ def generate_ai_text(prompt):
     return response.output_text
 st.title("LongForm AI")
 st.subheader("AI tools for long-form content")
-tool = st.sidebar.selectbox(
-    "Choose Tool",
-    [
-    "Book Generator",
-    "Presentation Generator",
-    "Pitch Deck Generator",
-    "Business Report",
-    "Long Text Editor"
-    ],
-    key="tool_selector"
-)
 def translate_text(text, language):
     prompt = f"""
     Translate the following text to {language}
