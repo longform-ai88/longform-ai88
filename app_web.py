@@ -900,7 +900,7 @@ Each slide should include:
     if "pitch" in st.session_state:
 
         st.write(st.session_state.pitch)
-if st.button("Create Pitch Deck PowerPoint"):
+if st.button("Create Pitch Deck PowerPoint", key="pitch_deck_button"):
 
     prs = Presentation()
     slide_layout = prs.slide_layouts[1]
