@@ -8,12 +8,14 @@ st.set_page_config(
 from reportlab.pdfgen import canvas
 from openai import OpenAI
 import os
+import stripe
 import base64
 from PIL import Image, ImageDraw
 from io import BytesIO
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.utils import ImageReader
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+stripe.api_key = st.secrets["STRIPE_SECRET_KEY"]
 @st.cache_data
 def generate_ai_text(prompt):
     response = client.responses.create(
@@ -33,6 +35,9 @@ tool = st.sidebar.selectbox(
     "Long Text Editor"
     ]
 )
+if st.sidebar.button("Upgrade to Pro"):
+    checkout_url = create_checkout()
+    st.markdown(f"[Click here to pay]({checkout_url})")
 def translate_text(text, language):
     prompt = f"""
     Translate the following text to {language}
@@ -499,26 +504,7 @@ def generate_ai_text(prompt):
         input=prompt
     )
     return response.output_text
-st.title("LongForm AI")
-st.subheader("AI tools for long-form content")
-def translate_text(text, language):
-    prompt = f"""
-    Translate the following text to {language}
-    Keep formatting, bullet points and paragraphs.
-    IMPORTANT:
-    - Do NOT summarize
-    - Do NOT shorten the text
-    - Keep the same structure
-    TEXT:
-    {text}
-    """
-    response = client.responses.create(
-        model="gpt-4.1-mini",
-        input=prompt
 
-    )
-
-    return response.output_text
 def create_pdf(text, cover_image, filename="book.pdf"):
     c = canvas.Canvas(filename, pagesize=letter)
     width, height = letter
