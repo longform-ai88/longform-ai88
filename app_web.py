@@ -617,8 +617,9 @@ if tool == "Book Generator":
             "Chinese",
             "French",
             "Japanese"
-        ]
-
+        ],
+        key="language_selector"
+    )
     chapters = st.slider("Number of chapters", 1, 10, 3)
     topic = st.text_input("Book topic", key="topic_input")
     author = st.text_input("Author", key="author_input")
