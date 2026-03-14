@@ -628,7 +628,7 @@ if tool == "Book Generator":
         cover_image = generate_cover(topic, author)
         st.image(cover_image, caption="AI Generated Book Cover")
         st.markdown(f"**Author:** {author}")
-    if st.button("Generate Book"):
+    if st.button("Generate Book", key="generate_book_button"):
         st.session_state.book = {}
         book_summary = ""
         outline_prompt = f"""
