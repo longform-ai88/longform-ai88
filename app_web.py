@@ -599,7 +599,7 @@ if tool == "Book Generator":
         height=250,
         key="book_notes"
     )
-    author = st.text_input("Author", key="book_author")
+    author = st.text_input("Author", key="book_author") 
     language = st.selectbox(..., key="language_select")
         "Translate book to:",
         [   "None",
@@ -619,7 +619,7 @@ if tool == "Book Generator":
             "Japanese"
         ],
         key="language_selector"
-    )
+
     chapters = st.slider("Number of chapters", 1, 10, 3)
     topic = st.text_input("Book topic", key="topic_input")
     author = st.text_input("Author", key="author_input")
