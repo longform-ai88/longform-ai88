@@ -622,8 +622,8 @@ if tool == "Book Generator":
     )
 
     chapters = st.slider("Number of chapters", 1, 10, 3, key="book_chapters")
-    topic = st.text_input("Book topic", key="topic_input")
-    author = st.text_input("Author", key="author_input")
+    topic = st.text_input("Book topic", key="book_topic_input")
+    author = st.text_input("Author", key="book_author_input")
     if topic and author:
         cover_image = generate_cover(topic, author)
         st.image(cover_image, caption="AI Generated Book Cover")
