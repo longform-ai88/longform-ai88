@@ -596,7 +596,7 @@ if tool == "Book Generator":
     topic = st.text_input("Book topic", key="book_topic")
     user_text = st.text_area(
         "Optional: Paste notes or text for the book",
-        height=250
+        height=250,
         key="book_notes"
     )
     author = st.text_input("Author", key="book_author")
@@ -618,7 +618,7 @@ if tool == "Book Generator":
             "French",
             "Japanese"
         ]
-        
+
     chapters = st.slider("Number of chapters", 1, 10, 3)
     topic = st.text_input("Book topic", key="topic_input")
     author = st.text_input("Author", key="author_input")
