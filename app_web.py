@@ -35,9 +35,6 @@ tool = st.sidebar.selectbox(
     "Long Text Editor"
     ]
 )
-if st.sidebar.button("Upgrade to Pro"):
-    checkout_url = create_checkout()
-    st.markdown(f"[Click here to pay]({checkout_url})")
 def translate_text(text, language):
     prompt = f"""
     Translate the following text to {language}
