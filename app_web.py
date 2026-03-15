@@ -64,6 +64,14 @@ Generate professional content in seconds.
 """)
 
 st.subheader("AI tools for long-form content")
+if not st.session_state.get("paid"):
+    st.warning("Upgrade to Pro to use the AI tools.")
+
+    if st.button("Upgrade to Pro 💎"):
+        checkout_url = create_checkout()
+        st.markdown(f"[Click here to pay]({checkout_url})")
+
+    st.stop()
 tool = st.sidebar.selectbox(
     "Choose Tool",
     [
