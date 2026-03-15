@@ -16,6 +16,7 @@ from reportlab.lib.pagesizes import letter
 from reportlab.lib.utils import ImageReader
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 stripe.api_key = st.secrets["STRIPE_SECRET_KEY"]
+st.write("Stripe key loaded:", st.secrets["Stripe_SECRET_KEY"][:10])
 def create_checkout():
     session = stripe.checkout.Session.create(
         payment_method_types=["card"],
