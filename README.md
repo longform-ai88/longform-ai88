@@ -1,17 +1,15 @@
 # LongForm AI
 
 ![LongForm AI](IMG_3ECCBDA8-6C94-47ED-904F-37A59FAA3A9A.jpeg)
-<!--
-**longform-ai88/longform-ai88** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+## AI Writing & Presentation Generator
 
-Here are some ideas to get you started:
+LongForm AI is an AI tool for generating professional long-form content.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+Features:
+
+• Book generator  
+• Pitch deck generator  
+• Business report generator  
+• Long text editor  
+
+Built with Python, Streamlit and OpenAI API.
