@@ -28,6 +28,7 @@ st.markdown("""
 Create long-form content instantly with AI.
 
 Tools included:
+
 • 📚 Book Generator
 • 🎤 Pitch Deck Generator
 • 📊 Business Report Generator
@@ -36,7 +37,6 @@ Tools included:
 Generate professional content in seconds.
 """)
 
-st.subheader("AI tools for long-form content")
 st.subheader("AI tools for long-form content")
 tool = st.sidebar.selectbox(
     "Choose Tool",
