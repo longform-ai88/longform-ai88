@@ -63,13 +63,30 @@ Create long-form content instantly with AI.
 Generate professional content in seconds.
 """)
 
-st.subheader("AI tools for long-form content")
-if not st.session_state.get("paid"):
-    st.warning("Upgrade to Pro to use the AI tools.")
+st.subheader("🚀 Unlock LongForm AI Pro")
 
-    if st.button("Upgrade to Pro 💎"):
+if not st.session_state.get("paid"):
+
+    st.info("""
+### LongForm AI Pro
+
+Get access to all AI tools:
+
+• 📚 Book Generator  
+• 🎤 Pitch Deck Generator  
+• 📊 Business Report Generator  
+• ✍️ Long Text Editor  
+
+**Only $19 one-time**
+""")
+
+    if st.button("💎 Upgrade to Pro – $19"):
         checkout_url = create_checkout()
-        st.markdown(f"[Click here to pay]({checkout_url})")
+        st.markdown(f"""
+### Complete your upgrade
+
+👉 [Click here to secure your Pro access]({checkout_url})
+""")
 
     st.stop()
 tool = st.sidebar.selectbox(
