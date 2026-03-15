@@ -80,8 +80,9 @@ Get access to all AI tools:
 **Only $19 one-time**
 """)
 
-    if st.button("💎 Upgrade to LongForm AI Pro - $19"):
-        checkout_url = create_checkout()
+if st.button("💎 Upgrade to LongForm AI Pro – $19"):
+    checkout_url = create_checkout()
+
     st.success("Almost done! Complete your upgrade below.")
 
     st.markdown(f"""
