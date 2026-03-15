@@ -27,7 +27,7 @@ st.title("LongForm AI")
 st.markdown("""
 Create long-form content instantly with AI.
 
-Tools included:
+**Tools included:**
 
 • 📚 Book Generator
 • 🎤 Pitch Deck Generator
