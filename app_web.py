@@ -45,6 +45,11 @@ def generate_ai_text(prompt):
     )
     return response.output_text
 st.title("LongForm AI")
+query_params = st.query_params
+
+if "success" in query_params:
+    st.success("Payment successful! You now have access to LongForm AI Pro.")
+    st.session_state["paid"] = True
 st.markdown("""
 Create long-form content instantly with AI.
 
