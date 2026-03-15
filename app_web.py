@@ -90,7 +90,7 @@ Get access to all AI tools:
 👉 **[Complete payment here]({checkout_url})**
 """)
 
-    st.stop()
+st.stop()
 tool = st.sidebar.selectbox(
     "Choose Tool",
     [
