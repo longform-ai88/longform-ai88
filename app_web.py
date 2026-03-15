@@ -16,6 +16,26 @@ from reportlab.lib.pagesizes import letter
 from reportlab.lib.utils import ImageReader
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 stripe.api_key = st.secrets["STRIPE_SECRET_KEY"]
+def create_checkout():
+     session = stripe.checkout.Session.create(
+        payment_method_types=["card"],
+        line_items=[
+            {
+                "price_data": {
+                    "currency": "usd",
+                    "product_data": {
+                        "name": "LongForm AI Pro",
+                        },
+                        "unit_amount": 900,
+                },
+                "quantity": 1,
+            }
+        ],
+        mode="payment",
+        success_url="https://longform-ai88.streamlit.app/?success=true", 
+        cancel_url="https://longform-ai88.streamlit.app/?canceled=true",
+    ) 
+    return session.url
 @st.cache_data
 def generate_ai_text(prompt):
     response = client.responses.create(
