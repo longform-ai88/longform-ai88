@@ -27,7 +27,7 @@ def create_checkout():
                     "product_data": {
                         "name": "LongForm AI Pro",
                         },
-                        "unit_amount": 900,
+                        "unit_amount": 1900,
                 },
                 "quantity": 1,
             }
