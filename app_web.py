@@ -429,29 +429,6 @@ Each slide should include:
     if "pitch" in st.session_state:
 
         st.write(st.session_state.pitch)
-if st.button("Create Pitch Deck PowerPoint"):
-
-    prs = Presentation()
-    slide_layout = prs.slide_layouts[1]
-
-    for slide_text in st.session_state.pitch.split("\n\n"):
-        slide = prs.slides.add_slide(slide_layout)
-        parts = slide_text.split("\n")
-
-        slide.shapes.title.text = parts[0]
-
-        content = slide.placeholders[1]
-        content.text = "\n".join(parts[1:])
-
-    prs.save("pitch_deck.pptx")
-
-    with open("pitch_deck.pptx", "rb") as file:
-
-        st.download_button(
-            label="Download Pitch Deck",
-            data=file,
-            file_name="pitch_deck.pptx"
-        )
 if tool == "Business Report":
     st.header("Business Report Generator")
     topic = st.text_input("business topic")
