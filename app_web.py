@@ -24,6 +24,19 @@ def generate_ai_text(prompt):
     )
     return response.output_text
 st.title("LongForm AI")
+st.markdown("""
+Create long-form content instantly with AI.
+
+Tools included:
+• 📚 Book Generator
+• 🎤 Pitch Deck Generator
+• 📊 Business Report Generator
+• 📝 Long Text Editor
+
+Generate professional content in seconds.
+""")
+
+st.subheader("AI tools for long-form content")
 st.subheader("AI tools for long-form content")
 tool = st.sidebar.selectbox(
     "Choose Tool",
