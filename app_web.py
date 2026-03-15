@@ -29,10 +29,10 @@ Create long-form content instantly with AI.
 
 **Tools included:**
 
-• 📚 Book Generator
-• 🎤 Pitch Deck Generator
-• 📊 Business Report Generator
-• 📝 Long Text Editor
+- 📚 Book Generator
+- 🎤 Pitch Deck Generator
+- 📊 Business Report Generator
+- 📝 Long Text Editor
 
 Generate professional content in seconds.
 """)
