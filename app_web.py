@@ -2,6 +2,7 @@ from moviepy.editor import *
 import streamlit as st
 from openai import OpenAI
 from gtts import gTTS
+import requests
 
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
@@ -35,9 +36,13 @@ Make it entertaining and easy to follow.
     st.audio("voice.mp3")
     audio = AudioFileClip("voice.mp3")
 
-    video = ColorClip(size=(1280, 720), color=(0, 0, 0), duration=audio.duration)
-
-    video = video.set_audio(audio)
+    # last ned bilde img_url = "https://images.unsplash.com/photo-1519389950473-47ba0277781c"
+    img_data = requests.get(img_url).content
+    with open("bg.jpg", "wb") as f:
+        f.write(img_data)
+    # lag video med bilde
+    image = ImageClip("bg.jpg").set_duration(audio.duration).resize((1280, 720))
+    video = image.set_audio(audio)    
 
     video.write_videofile("output.mp4", fps=24)
 
