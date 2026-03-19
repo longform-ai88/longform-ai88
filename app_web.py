@@ -1,3 +1,3 @@
-import streamlit as streamlit
-st.title("Longform AI 🚀")
-st.write("App is running!")
+import streamlit as st
+st.title("Longform AI 🚀🔥")
+st.write("App is running!"!)
