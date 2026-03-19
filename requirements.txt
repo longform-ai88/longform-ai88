@@ -2,5 +2,5 @@ streamlit
 openai
 gtts
 requests
-pillow
+pillow==9.5.0
 moviepy
