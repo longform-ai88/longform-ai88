@@ -11,7 +11,15 @@ if st.button("Generate"):
     response = client.chat.completions.create(
         model="gpt-4o-mini",
         messages=[
-            {"role": "user", "content": f"write a viral Youtube script about: {prompt}"}
+            {"role": "user", "content": f"""
+Write a highly engaging viral Youtube script about: {prompt}
+Include
+- Hook in first 5 seconds
+- Storytelling
+- Clear structure
+- Call to action
+Make it entertaining and easy to follow.
+"""}
         ]
     )
     
