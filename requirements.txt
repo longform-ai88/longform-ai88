@@ -2,8 +2,8 @@ streamlit
 openai
 python-pptx
 reportlab
-pillow
 stripe
 gtts
 moviepy
 requests
+pillow==9.5.0
