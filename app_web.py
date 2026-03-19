@@ -1,7 +1,6 @@
-import os
-os.system("apt-get update && apt-get install -y ffmpeg")
 import streamlit as st
 from openai import OpenAI
+from gtts import gTTS
 
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
@@ -26,3 +25,10 @@ Make it entertaining and easy to follow.
     )
     
     st.write(response.choices[0].message.content)
+
+    script = response.choices[0].message.content
+
+    tts = gTTS(script)
+    tts.save("voice.mp3")
+
+    st.audio("voice.mp3")   
