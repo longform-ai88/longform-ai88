@@ -5,6 +5,26 @@ st.set_page_config(
     page_icon="favicon.png",
     layout="wide"
 )
+
+if "uses" not in st.session_state:
+    st.session_state["uses"] = 0
+if "paid" not in st.session_state:
+    st.session_state["paid"] = False
+
+FREE_LIMIT = 3
+
+# PAYWALL
+if not st.session_state["paid"] and st.session_state["uses"] >= FREE_LIMIT:
+    st.warning("🔒 Free limit reached. Please upgrade.")
+        
+    st.link_button( "💳 Upgrade now", "https://buy.stripe.com/6oUeVecpDcqSgLcglLfn00"
+    )
+    
+    if st.button("I have paid"):
+        st.session_state["paid"] = True
+    st.stop()
+st.info(f"Free uses left: {FREE_LIMIT - st.session_state['uses']}")
+
 from reportlab.pdfgen import canvas
 from openai import OpenAI
 import os
@@ -215,17 +235,19 @@ if tool == "Book Generator":
     chapters = st.slider("Number of chapters", 1, 10, 3)
     topic = st.text_input("Book topic", key="topic_input")
     author = st.text_input("Author", key="author_input")
-    if topic and author:
-        cover_image = generate_cover(topic, author)
-        st.image(cover_image, caption="AI Generated Book Cover")
-        st.markdown(f"**Author:** {author}")
-        st.markdown("---")
-        st.markdown("### Uppgrade to LongForm AI Pro")
-        st.link_button(
+    
+    if st.button("Generate Book"):
+        st.session_state["uses"] += 1
+        if topic and author:
+            cover_image = generate_cover(topic, author)
+            st.image(cover_image, caption="AI Generated Book Cover")
+            st.markdown(f"**Author:** {author}")
+            st.markdown("---")
+            st.markdown("### Uppgrade to LongForm AI Pro")
+            st.link_button(
             "Uppgrade to Pro (§19/month)",
             "https://buy.stripe.com/test_7sY14ocfid2PdjkFd67S00"
-        )
-    if st.button("Generate Book"):
+            )
         st.session_state.book = {}
         book_summary = ""
         outline_prompt = f"""
