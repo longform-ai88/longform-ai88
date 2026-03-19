@@ -2,7 +2,5 @@ streamlit
 openai
 gtts
 requests
-pillow==9.5.0
-image
-imageio-ffmpeg
+pillow
 numpy
