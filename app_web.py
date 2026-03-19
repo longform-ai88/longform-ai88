@@ -36,7 +36,7 @@ Make it entertaining and easy to follow.
     st.audio("voice.mp3")
     audio = AudioFileClip("voice.mp3")
 
-    # last ned bilde img_url = "https://images.unsplash.com/photo-1519389950473-47ba0277781c"
+    img_url = "https://images.unsplash.com/photo-1519389950473-47ba0277781c"
     img_data = requests.get(img_url).content
     with open("bg.jpg", "wb") as f:
         f.write(img_data)
