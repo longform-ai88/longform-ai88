@@ -1,8 +1,5 @@
 streamlit
 openai
-python-pptx
-reportlab
-stripe
 gtts
 moviepy
 requests
