@@ -1,3 +1,4 @@
+from moviepy.editor import *
 import streamlit as st
 from openai import OpenAI
 from gtts import gTTS
@@ -31,4 +32,13 @@ Make it entertaining and easy to follow.
     tts = gTTS(script)
     tts.save("voice.mp3")
 
-    st.audio("voice.mp3")   
+    st.audio("voice.mp3")
+    audio = AudioFileClip("voice.mp3")
+
+    video = ColorClip(size=(1280, 720), color=(0, 0, 0), duration=audio.duration)
+
+    video = video.set_audio(audio)
+
+    video.write_videofile("output.mp4", fps=24)
+
+    st.video("output.mp4") 
