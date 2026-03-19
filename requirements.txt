@@ -1,6 +1,5 @@
 streamlit
 openai
 gtts
-moviepy==1.0.3
 requests
 pillow==9.4.0

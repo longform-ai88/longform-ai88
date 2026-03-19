@@ -1,8 +1,13 @@
-from moviepy.editor import *
+import os
+
+os.system("pip install moviepy")
+
 import streamlit as st
 from openai import OpenAI
 from gtts import gTTS
 import requests
+
+from moviepy.editor import *
 
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
