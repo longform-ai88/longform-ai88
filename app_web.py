@@ -36,5 +36,4 @@ Make it entertaining and easy to follow.
     tts = gTTS(script)
     tts.save("voice.mp3")
 
-    st.audio("voice.mp3")
-    audio = AudioFileClip("voice.mp3") 
+    st.audio("voice.mp3") 
