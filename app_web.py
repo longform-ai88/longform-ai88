@@ -1,3 +1,5 @@
+import os
+os.system("apt-get update && apt-get install -y ffmpeg")
 import streamlit as st
 from openai import OpenAI
 
