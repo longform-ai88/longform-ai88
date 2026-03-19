@@ -4,5 +4,5 @@ python-pptx
 reportlab
 pillow
 stripe
-gTTS
+gtts
 moviepy
