@@ -7,8 +7,6 @@ from openai import OpenAI
 from gtts import gTTS
 import requests
 
-from moviepy.editor import *
-
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 st.title("Longform AI")
@@ -39,16 +37,4 @@ Make it entertaining and easy to follow.
     tts.save("voice.mp3")
 
     st.audio("voice.mp3")
-    audio = AudioFileClip("voice.mp3")
-
-    img_url = "https://images.unsplash.com/photo-1519389950473-47ba0277781c"
-    img_data = requests.get(img_url).content
-    with open("bg.jpg", "wb") as f:
-        f.write(img_data)
-    # lag video med bilde
-    image = ImageClip("bg.jpg").set_duration(audio.duration).resize((1280, 720))
-    video = image.set_audio(audio)    
-
-    video.write_videofile("output.mp4", fps=24)
-
-    st.video("output.mp4") 
+    audio = AudioFileClip("voice.mp3") 
