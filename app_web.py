@@ -14,7 +14,7 @@ if "user_id" not in st.session_state:
 if "uses" not in st.session_state:
     st.session_state.uses = 0
 
-client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+client = OpenAI(api_key=st=os.getenv("OPENAI_API_KEY"))
 
 st.title("Longform AI")
 
